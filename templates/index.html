@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Assignment7{% endblock %}
+
+{% block page_content %}
+
+
+<!-- {%- block metas %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/recipe.css">
+    {%- endblock metas %} -->
+
+
+<div class="container">
+  <div class="page_title">
+    <h1> A Little Meow Meow Page That Makes You Hungry</h1>
+  </div>
+  <div class="text_box">
+
+    <p class="caption">That handsome boy you are staring at is so attractive?</p>
+    <p class="caption">But this little something is even more mlem mlem :'333</p>
+
+    <img src="static/img/cake_img3.jpg" alt="Tiramisu cake">
+
+    <h3>Description</h3>
+    <div class="description">
+      Boy friend makes you cry, <i>little tiramisu</i> MAKES YOU SMILE <br>
+      Boy friend could be rough, <i>little tiramisu</i> is ALWAYS SOFT <br>
+      Boy friend sometimes gets bitter, <i>little tiramisu</i> - FOREVER A SWEETIE </div>
+
+    <p> Why are you still hesitating? </p>
+    <b class="center" style="color: rgb(180, 116, 93)">LET'S GET YOURSELF A SIDECHICK TIRAMISU !</b>
+
+
+    <h3>Ingredients</h3>
+
+    <!-- <ul id="ingredient">
+        <li>1 and 1/4 cups (300ml) very strongly prepared espresso, warm or room temperature</li>
+        <li>6 Tablespoons (90ml) Grand Marnier*</li>
+        <li>40–45 ladyfingers*</li>
+        <li> 16 ounces (about 2 cups; 450g) mascarpone, cold or at room temperature</li>
+        <li> 1/4 cup (60ml) dark rum</li>
+        <li> 4 large pasteurized eggs, separated*</li>
+        <li> 1/2 cup (100g) granulated sugar, divided*</li>
+        <li> 2 cups (480ml) heavy cream or heavy whipping cream</li>
+        <li> 1/2 teaspoon pure vanilla extract</li>
+        <li> 1/8 teaspoon salt</li>
+        <li>unsweetened natural or dutch-process cocoa powder</li>
+        <li>a large 9×13 inch baking pan/dish with at least a 12-14 cup capacity</li>
+        {% if ing %}<li>{{ ing }}</li>{% endif %}
+      </ul> -->
+    <form method="POST">{{ wtf.quick_form(form)}}</form>
+    <ul>
+      {% for ing in ingredients%}
+      <li>{{ing.amount}} {{ing.ing}} </li>
+      {% endfor %}
+    </ul>
+
+
+
+    <h3>Instructions</h3>
+    <i>Recipe reference: <a href="https://sallysbakingaddiction.com/tiramisu/">Sally Baking Addition</a> </i>
+
+    <div class="video_wrapper"><iframe src="https://www.youtube.com/embed/-dtdhcOigZs" allowfullscreen></iframe>
+    </div>
+
+    <p><b>STEPS TO GO</b></p>
+
+    <ol id="step">
+      <li><b>Dip half of the ladyfingers: </b> You will form 2 layers each of dipped ladyfingers and
+        mascarpone
+        cream.
+        Let’s begin with the 1st layer of ladyfingers. Whisk the espresso and Grand Marnier together in a
+        shallow bowl.
+        One at a time, quickly dip each side of the ladyfinger into the espresso mixture. You don’t want to
+        over-saturate the ladyfinger with liquid because then the ladyfingers will taste soggy. Just a quick
+        dip
+        on each
+        side. Arrange the dipped ladyfingers in the baking pan to make one solid layer. If needed, cut some
+        ladyfingers
+        to fill in any empty spaces. Reserve remaining espresso mixture and ladyfingers for another layer.
+        <br>
+        <img src="{{url_for('static',filename='/img/step1.jpg')}}" alt="ladyfinger">
+      </li>
+
+      <li><b>Begin the mascarpone cream: </b> With a handheld or stand mixer fitted with a paddle or whisk
+        attachment, beat
+        the
+        mascarpone and rum together on medium speed in a large bowl until smooth. Set aside. <br> <img
+          src="static/img/step2.jpg" alt="mascapone"></li>
+
+      <li><b>Prepare a double boiler for the egg yolks:</b> If you have a double boiler, use it in this
+        step. If
+        you don’t,
+        place
+        a heat-proof bowl over a small pot of simmering water over medium-low heat. Don’t let the water
+        touch
+        the bottom
+        of the bowl. Using a whisk or eggbeater (I simply use a whisk), whisk the egg yolks and 1/4 cup
+        (50g) of
+        granulated sugar together until light and foamy, about 5 minutes. Remove from the heat and
+        immediately
+        pour into
+        the mascarpone mixture. Beat on medium speed until combined. <br> <img src="static/img/step3.jpg" alt="cream">
+      </li>
+
+
+      <li><b>Whip the heavy cream:</b> With a handheld or stand mixer fitted with a whisk attachment, beat
+        the
+        heavy cream
+        and
+        vanilla extract together on medium-high speed until medium peaks form, about 3-4 minutes. Medium
+        peaks
+        are
+        between soft/loose peaks and stiff peaks– and are the perfect consistency for the tiramisu cream.
+        Fold
+        the
+        whipped cream into the mascarpone mixture.</li>
+      <li><b>Beat the egg whites:</b> With a handheld or stand mixer fitted with a *clean* whisk
+        attachment,
+        beat
+        the egg
+        whites
+        and salt together on medium-high speed until foamy, about 1 minute. Increase to high speed and
+        slowly
+        pour in
+        the remaining 1/4 cup (50g) of sugar. Beat until stiff peaks form, about 4-5 minutes. (Do not
+        over-beat
+        as the
+        egg whites will become dry.) Fold into the mascarpone cream. <br> <img src="static/img/step5.jpg" alt="cream">
+      </li>
+
+      <li> <b>Spread half of the mascarpone cream evenly over bottom layer of ladyfingers.</b> An offset
+        spatula
+        helps
+        spread it
+        neatly and evenly. <br> <img src="static/img/step6.jpg" alt="spread cream"></li>
+
+      <li><b>Dip remaining ladyfingers:</b> Dip remaining ladyfingers into remaining espresso mixture and
+        arrange
+        one-by-one on
+        top of the mascarpone layer. Gently press each down so they are nice and compact. Using an offset
+        spatula,
+        spread remaining mascarpone mixture evenly on top. If you’re using a large enough pan, it should all
+        fit
+        (but it
+        will definitely tower high!). Refrigerate uncovered for 2-3 hours.</li>
+      <li><b>Add cocoa layer, then chill: </b> After a couple hours in the refrigerator, sift or strain a
+        dense
+        layer of
+        cocoa
+        powder all over the top. Wipe the rim of the baking dish. Cover with plastic wrap or aluminum foil,
+        then
+        refrigerate for at least 8-9 more hours and up to 1 day. <br> <img src="static/img/cake_img2.jpg"
+          alt="Tiramisu">
+      </li>
+
+      <li><b>Using a sharp knife, slice chilled tiramisu into servings.</b> Wipe knife clean between cuts.
+        A
+        small
+        metal
+        serving
+        spatula is helpful for removing the slices. <br> <img src="static/img/cake_img1.jpg" alt="Nice cake">
+
+    </ol>
+    <p><b>Enjoy your great time with this sweetie!</b></p>
+  </div>
+</div>
+
+
+{% endblock %}
