@@ -1,6 +1,6 @@
 # RecipeWebsite
 
-A simple single-page website on a dessert recipe
+A simple single-page website on a dessert, which allow users to customize their recipes.
 
 ## Introduction
 
